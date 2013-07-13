@@ -1,0 +1,80 @@
+/* HEADER */
+header {
+    text-align: center;
+}
+
+header .sixteen.columns{
+    margin-bottom: 20px;
+}
+
+/* #Menu */
+
+nav {
+    display: block;
+    text-align: center;
+    border-top: 1px solid #d3d3d3;
+    border-bottom: 1px solid #d3d3d3;
+    margin: 10px auto 20px;
+    min-height: 35px;
+    padding: 12px 0 0;
+
+}
+nav ul {
+    display: block;
+    font-family: chaparral-pro-1,chaparral-pro-2, "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    margin: 0 auto;
+    text-align: center;
+    list-style:none
+}
+
+nav ul li {
+    display: inline;
+    border-color: #d3d3d3;
+    border-right: 1px solid #d3d3d3;
+    padding: 0 25px 0;
+}
+nav ul li a, nav ul li a:visited, nav ul li a:active {
+    border-radius: 2px 2px 2px 2px;
+    color: #555555;
+    font-size: 19px;
+    position: relative;
+    text-decoration: none;
+}
+
+nav ul li.first {
+    padding-left: 0;
+}
+
+nav ul li.last {
+    border-right: none;
+    padding-right: 0;
+}
+
+nav ul li a:hover, nav ul li a:focus {
+    color: #d3d3d3;
+}
+
+/* ===========================================
+			Footer
+==============================================*/
+#footer {
+	border-top:3px double #ccc;
+	margin-top:4.5em;
+	color:#666;
+}
+#footer ul {padding-top:.75em;}
+#footer_links {text-align: right;}
+@media only screen and (max-width: 767px) {
+	#footer_links,
+	#footer ul {text-align: center;}
+}
+/* a little work around to not offset the text on hover */
+#footer a {color:#666;}
+#footer a:hover {color:#c02702;}
+/* end our workaround */
+#facebook, #twitter, #resume, #dribbble {
+	float:right;
+	padding-left: 20px;
+	margin-left:20px;	
+}
