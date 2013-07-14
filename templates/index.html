@@ -32,12 +32,12 @@
 	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
 	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
 </head>
-<body>
+<body itemscope itemtype="http://schema.org/Person">
 	<a href="https://github.com/victorpantoja/portfolio"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
 	<header class="container">
 		<div class="sixteen columns">
-			<h1 class="remove-bottom" style="margin-top: 40px">Victor Pantoja</h1>
-			<h3>Software Engineer</h2>
+			<h1 class="remove-bottom" style="margin-top: 40px" itemprop="name">Victor Pantoja</h1>
+			<h3 itemprop="jobTitle">Senior Software Engineer</h2>
 			<h5>[This is the very first version! Be nice :)]</h5>
 		</div>
 	</header>
@@ -56,7 +56,7 @@
 	<section class="container">
 		<article class="one-third column">
 			<h3>About Me</h3>
-			<p>I am a 29 years passionate and self-taught software engineer and a senior web developer, with 8 years of experience building large, consumer-focused content sites at globo.com, one of the top-rated portals of news, sports and entertainment throughout Latin America.</p>
+			<p>I am a 29 years passionate and self-taught software engineer and a senior web developer, with 8 years of experience building large, consumer-focused content sites at <span itemprop="worksFor">globo.com</span>, one of the top-rated portals of news, sports and entertainment throughout Latin America.</p>
 			<a href="http://victorpantoja.com/about" class="button">More About Me</a>
 		</article>
 		<article class="one-third column">
@@ -81,11 +81,11 @@
 	<footer id="footer" class="sixteen columns container">
 		<ul class="six columns alpha">
 			<li>
-			© 2013 <a href="http://victorpantoja.com/" title="Victor Pantoja">Victor Pantoja</a>
+			© 2013 <a href="http://victorpantoja.com/" itemprop="url" title="Victor Pantoja">Victor Pantoja</a>
 			</li> 
 		</ul>
 		<ul id="footer_links" class="ten columns omega">
-			<li><a href="mailto:victor.pantoja@gmail.com">Contact</a></li>
+			<li><a href="mailto:victor.pantoja@gmail.com" itemprop="email">victor.pantoja@gmail.com</a></li>
 		</ul>
 	</footer>
 
