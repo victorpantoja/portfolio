@@ -13,9 +13,9 @@ setup:
 	@pip install -r requirements-dev.txt
 
 start:
-	PYTHONPATH=`pwd`:`pwd`/wedding_plattform python wedding_plattform/server.py ${PORT}
+	PYTHONPATH=`pwd`:`pwd`/portfolio python portfolio/server.py ${PORT}
 
 test: clean
 	echo "Running tests..."
 	PYTHONPATH=`pwd` \
-		nosetests -s --verbose --with-coverage --cover-package=wedding_plattform tests/*
+		nosetests -s --verbose --with-coverage --cover-package=portfolio tests/*

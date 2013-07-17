@@ -12,25 +12,25 @@
 	<meta property="og:title" content="Victor Pantoja | Software Engineer"/>
 	<meta property="og:description" content="I am a 29 years passionate and self-taught software engineer and a senior web developer, with 8 years of experience building large, consumer-focused content sites"/>
 	<meta property="og:image" content="http://fbcdn-profile-a.akamaihd.net/hprofile-ak-prn2/c60.36.446.446/s200x200/185448_262226513787496_7405137_n.jpg"/>
-	<meta property="og:url" content="http://victorpantoja.com"/>
+	<meta property="og:url" content="{{SERVER_NAME}}"/>
 	<meta property="og:site_name" content="Victor Pantoja Portfolio"/>
 	<meta property="og:type" content="website"/>
 	<meta property="fb:profile_id" content="victor.pantoja.77"/>
 	<meta property="fb:app_id" content="156684834419134"/>
 
-	<link rel="stylesheet" href="stylesheets/base.css">
-	<link rel="stylesheet" href="stylesheets/skeleton.css">
-	<link rel="stylesheet" href="stylesheets/layout.css">
-	<link rel="stylesheet" href="stylesheets/style.css">
+	<link rel="stylesheet" href="static/css/base.css">
+	<link rel="stylesheet" href="static/css/skeleton.css">
+	<link rel="stylesheet" href="static/css/layout.css">
+	<link rel="stylesheet" href="static/css/style.css">
 
 	<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 
-	<link rel="shortcut icon" href="images/favicon.ico">
-	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+	<link rel="shortcut icon" href="static/images/favicon.ico">
+	<link rel="apple-touch-icon" href="static/images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="static/images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="static/images/apple-touch-icon-114x114.png">
 </head>
 <body itemscope itemtype="http://schema.org/Person">
 	<a href="https://github.com/victorpantoja/portfolio"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
@@ -45,40 +45,17 @@
 		<div class="container">
 			<div class="sixteen columns">
 				<ul>
-					<li class="first"><a href="http://victorpantoja.com">Home</a></li>
-					<li class=""><a href="http://victorpantoja.com/work">Work</a></li>
-					<li class=""><a href="http://victorpantoja.com/publications">Publications</a></li>
-					<li class="last"><a href="http://victorpantoja.com/about">About</a></li>
+					<li class="first"><a href="{{SERVER_NAME}}">Home</a></li>
+					<li class=""><a href="{{SERVER_NAME}}/work">Work</a></li>
+					<li class=""><a href="{{SERVER_NAME}}/publications">Publications</a></li>
+					<li class="last"><a href="{{SERVER_NAME}}/about">About</a></li>
 				</ul>
 			</div>
 		</div>
 	</nav>
 
-	<section class="container">
-		<article class="one-third column">
-			<h3>About Me</h3>
-			<p>I am a 29 years passionate and self-taught software engineer and a senior web developer, with 8 years of experience building large, consumer-focused content sites at <span itemprop="worksFor">globo.com</span>, one of the top-rated portals of news, sports and entertainment throughout Latin America.</p>
-			<a href="http://victorpantoja.com/about" class="button">More About Me</a>
-		</article>
-		<article class="one-third column">
-			<h3>Work</h3>
-			<ul class="square">
-				<li><strong>globoesporte.com</strong>: the first top-rated sports portals in Brazil</li>
-				<li><strong>sportv.com</strong>: the second one :)</li>
-				<li><strong>euatleta.com</strong>: for running funs!</li>
-				<li><strong>cartolafc.globo.com</strong>: a fantasy game about soccer</li>
-			</ul>
-			<a href="http://victorpantoja.com/work" class="button">View Work</a>
-		</article>
-		<article class="one-third column">
-			<h3>Contact</h3>
-			<ul class="square">
-				<li><strong>LinkedIn</strong>: <a href="http://www.linkedin.com/in/victorpantoja" target="_new">linkedin.com/in/victorpantoja</a></li>
-				<li><strong>Twitter</strong>: <a href="http://twitter.com/victorpantoja" target="_new"> @victorpantoja </a></li>
-				<li><strong>GitHub</strong>: <a href="http://github.com/victorpantoja" target="_new">github.com/victorpantoja </a></li>
-			</ul>
-		</article>
-	</section>
+	{% block content %}
+	{% end %}
 
 	<footer id="footer" class="sixteen columns container">
 		<ul class="six columns alpha">
