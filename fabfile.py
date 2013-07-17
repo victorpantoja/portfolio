@@ -14,7 +14,7 @@ boto.config.load_from_path(boto_config_file)
 from fabix.aws import ec2
 
 
-PROJECT_DIR = '/var/www/project/victorpantoja'
+PROJECT_DIR = '/var/www/portfolio/'
 
 
 @task
@@ -27,16 +27,23 @@ def prod():
 @task
 def setup():
     """Setup project"""
-    packages = 'nginx'
+    packages = 'nginx python python-pip'
 
     with prefix('DEBIAN_FRONTEND=noninteractive'):
         sudo('apt-get update')
         sudo('apt-get -y install {}'.format(packages))
 
     sudo('mkdir -p {}'.format(PROJECT_DIR))
+    sudo('mkdir -p /var/log/portfolio')
 
+    sudo('pip install virtualenv')
+    sudo('virtualenv {}virtualenv'.format(PROJECT_DIR))
+
+    install_requirements()
+    put(os.path.join(LOCAL_DIR, 'deploy', 'upstart.conf'),
+        '/etc/init/portfolio.conf', use_sudo=True)
     put(os.path.join(LOCAL_DIR, 'deploy', 'nginx-site.conf'),
-        '/etc/nginx/sites-enabled/victorpantoja.conf', use_sudo=True)
+        '/etc/nginx/sites-enabled/portfolio.conf', use_sudo=True)
     sudo('rm -f /etc/nginx/sites-enabled/default')
     execute(nginx, 'restart')
 
@@ -74,20 +81,27 @@ def update_autoscale(instance_id):
 @task
 def deploy():
     """Deploy project to server"""
-    sudo('rm -rf {}/templates'.format(PROJECT_DIR))
-    put(os.path.join(LOCAL_DIR, 'templates'), PROJECT_DIR, use_sudo=True)
+    sudo('rm -rf {}portfolio'.format(PROJECT_DIR))
+    put(os.path.join(LOCAL_DIR, 'portfolio'), PROJECT_DIR, use_sudo=True)
+
+    # move settings
+    with cd("{}portfolio/".format(PROJECT_DIR)):
+        sudo('mv settings_prod.py settings.py')
+        sudo('rm settings.pyc')
+
+    execute(restart)
 
 
 @task
 def start():
     """Start application service"""
-    sudo('start victorpantoja')
+    sudo('start portfolio')
 
 
 @task
 def stop():
     """Stop application service"""
-    sudo('stop victorpantoja')
+    sudo('stop portfolio')
 
 
 @task
