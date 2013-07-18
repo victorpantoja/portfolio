@@ -19,3 +19,7 @@ test: clean
 	echo "Running tests..."
 	PYTHONPATH=`pwd` \
 		nosetests -s --verbose --with-coverage --cover-package=portfolio tests/*
+
+runner_minify:
+	@echo "Minifing CSS and JS ..."
+    @cd minify && python minify_runner.py --settings=settings.conf
