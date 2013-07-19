@@ -81,13 +81,14 @@ def update_autoscale(instance_id):
 @task
 def deploy():
     """Deploy project to server"""
+    local("find . -name '*.pyc' -print0|xargs -0 rm -rf", capture=False)
+    local("find . -name '.sass-cache' -print0|xargs -0 rm -rf", capture=False)
     sudo('rm -rf {}portfolio'.format(PROJECT_DIR))
     put(os.path.join(LOCAL_DIR, 'portfolio'), PROJECT_DIR, use_sudo=True)
 
     # move settings
     with cd("{}portfolio/".format(PROJECT_DIR)):
         sudo('mv settings_prod.py settings.py')
-        sudo('rm settings.pyc')
 
     execute(restart)
 
