@@ -9,6 +9,11 @@ DEBUG = False
 TEMPLATE_PATH = get_path_to("templates")
 STATIC_PATH = get_path_to("static")
 
+LINKEDIN_API_KEY = <YOUR_KEY_HERE>
+LINKEDIN_API_SECRET = <YOUR_KEY_HERE>
+LINKEDIN_USER_TOKEN = <YOUR_KEY_HERE>
+LINKEDIN_USER_SECRET = <YOUR_KEY_HERE>
+
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': True,

@@ -1,2 +1,5 @@
 boto==2.6.0
 tornado==2.4
+requests
+requests_oauthlib
+#python-linkedin

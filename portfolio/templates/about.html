@@ -6,22 +6,24 @@
 		<h3>About</h3>
 		<p><img src="http://fbcdn-profile-a.akamaihd.net/hprofile-ak-prn2/c60.36.446.446/s200x200/185448_262226513787496_7405137_n.jpg">
 		</p>
+		{% if profile %}
+		<p>{{profile['firstName']}} {{profile['lastName']}} - {{profile['headline']}}</p>
+		{% end %}
 		<p>
-			I'm currently located at Rio de Janeiro, Brazil.
+			I'm currently located at {{profile['location']['name']}}.
 		</p>
 		<p>
 			I speak:
 			<ul class="square">
-				<li>Portuguese (native)</li>
-				<li>English (advanced)</li>
-				<li>Spanish (advanced)</li>
-				<li>French (intermediate)</li>
+				{% for language in  profile['languages']['values']%}
+				<li>{{language['language']['name']}}</li>
+				{% end %}
 			</ul>
 		</p>
 		<p><a href="https://plus.google.com/101037943565839122243?rel=author">Google</a></p>
 	</div>
 	<div class="nine columns">
-		<p>I am a 29 years computer engineer and a senior web developer, with 8 years of experience building large, consumer-focused content sites at globo.com, one of the top-rated portals of news, sports and entertainment throughout Latin America.</p>
+		<p>{{profile['summary']}}</p>
 		<ul class="square">
 			<li>
 				<strong>Catholic University of Rio de Janeiro - PUC-Rio</strong>
